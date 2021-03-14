@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+
+<h2> Giải phương trình bậc 2 : y=ax +bx +c =0</h2>
+<span>nhập giá trị a </span><input id="giatria" type="number"><br/>
+<span>nhập giá trị b </span><input id="giatrib" type="number"><br/>
+<span>nhập giá trị c </span><input id="giatric" type="number"><br/>
+
+<button  onclick="timx()">Tìm x</button>
+<br/>
+
+
+<phuongtrinh id="pt1"></phuongtrinh> <br/>
+<Nhiem1 id="nghiem"></Nhiem1>
+
+<script>
+    function timx(){
+
+        let a1 =document.getElementById('giatria').value;
+        let b1 =document.getElementById('giatrib').value;
+        let c1 =document.getElementById('giatric').value;
+        let nghiem ;
+
+
+        if (a1==0) {
+            alert('Số a  cần phải khác không');
+        }
+        else if (b1==0) {
+            if (-c1/a1 < 0) {
+                alert ('Phương trình vô nghiêm');
+            }
+            else{
+                nghiem = Math.sqrt(-c1/a1) ;
+                document.getElementById('pt1').innerText = 'Phương trình y=  ' + a1 + 'x^2 + '+ c1 + '  =0';
+                document.getElementById('nghiem').innerText = 'x=  ' + nghiem;
+            }
+
+        }//trường hợp thỏa mãn đủ a, b, c
+        else {
+            let delta = b1**2-4*a1*c1
+            let sqrtDelta= Math.sqrt(delta);
+            if (delta<0){
+                document.getElementById('pt1').innerText = 'Phương trình y=  ' + a1 + 'x^2 + ' + b1 + 'x + '+ c1 + '  =0';
+                document.getElementById('nghiem').innerText = 'Phương trình vô nghiệm vì Delta <0';
+            }else if (delta==0){
+                document.getElementById('pt1').innerText = 'Phương trình y=  ' + a1 + 'x^2 + ' + b1 + 'x + '+ c1 + '  =0';
+                nghiem =-b1/(2*a1)
+                document.getElementById('nghiem').innerText = 'Phương trình có nghiệm kép -b/2a ' + nghiem ;
+            }else{
+                document.getElementById('pt1').innerText = 'Phương trình y=  ' + a1 + 'x^2 + ' + b1 + 'x + '+ c1 + '  =0';
+
+                document.getElementById('nghiem').innerHTML =  "<x1> Phương trình có nghiệm x1 = " + ((-b1+ sqrtDelta)/(2*a1)) + "</x1></br>" + "Phương trình có nghiệm x2 = " + ((-b1- sqrtDelta)/(2*a1)) ;
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

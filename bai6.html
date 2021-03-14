@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+<h2> Giải phương trình bậc 1 : y=ax +b=0</h2>
+<span>nhập giá trị a </span><input id="giatria"><br/>
+<span>nhập giá trị b </span><input id="giatrib"><br/>
+<button  onclick="timx()">Tìm x</button>
+<br/>
+
+
+<phuongtrinh id="pt1"></phuongtrinh> <br/>
+<Nhiem1 id="nghiem"></Nhiem1>
+
+<script>
+    function timx(){
+
+        let a1 =document.getElementById('giatria').value;
+        let b1 =document.getElementById('giatrib').value;
+        if (a1==0) {alert('Số a cần phải khác không')}
+        else {
+            let nghiem = -b1 / a1;
+            document.getElementById('pt1').innerText = 'Phương trình y=  ' + a1 + 'x + ' + b1 + ' =0';
+            document.getElementById('nghiem').innerText = 'x= ' + nghiem;
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>

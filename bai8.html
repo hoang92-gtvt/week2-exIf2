@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+
+
+<h2> Kiểm tra giá trị tuổi của một người</h2>
+<span>nhập giá trị a </span><input id="sotuoi" type="number"><br/>
+<button onclick="ktra1()">Kiểm tra</button>
+<h3 id="trave"></h3>
+
+<script>
+    function ktra1(){
+        let age1 = document.getElementById('sotuoi').value;
+        if (age1 >0 && age1<120) {
+            document.getElementById('trave').innerText = 'Giá trị trên phù hợp với tuổi của người';
+
+        }else{
+            alert('Bạn nhập giá trị không phù hợp');
+            document.getElementById('trave').innerText = '';
+        }
+   }
+</script>
+
+
+</body>
+</html>

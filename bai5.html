@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+
+    <span>Canh a tam giac </span><input id="canha"><br/>
+    <span>Canh b tam giac </span><input id="canhb">
+    <button onclick="tinh()" >Tính diện tích</button>
+    <br/>
+    <ketqua id="kq"></ketqua>
+
+    <script>
+        function tinh(){
+            let a1 =document.getElementById('canha').value;
+            let b1 =document.getElementById('canhb').value;
+            let dientich = a1*b1/2;
+            document.getElementById('kq').innerText ='Diện tích hình tam giác ' + dientich;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<h2> Kiểm tra điều kiện của một tam giác</h2>
+<span>nhập giá trị cạnh a </span><input id="giatria" type="number"><br/>
+<span>nhập giá trị cạnh b </span><input id="giatrib" type="number"><br/>
+<span>nhập giá trị cạnh c </span><input id="giatric" type="number"><br/>
+
+<button  onclick="ktra9()">Kiểm tra</button>
+<br/>
+
+
+<KL id="kt9"></KL>
+
+
+<script>
+    function ktra9() {
+
+        let a9 = +document.getElementById('giatria').value;
+        let b9 = +document.getElementById('giatrib').value;
+        let c9 = +document.getElementById('giatric').value;
+
+
+
+        if (a9 == 0 || b9 == 0 || b9 == 0) {
+            alert('Cạnh của một tam giác có giá trị lớn hơn 0');
+        } else if (a9+b9 > c9 && a9+c9 > b9 && b9+c9 > a9) {
+            document.getElementById('kt9').innerText = '3 cạnh thỏa mãn điều kiện của một tam giác';
+        } else {
+            document.getElementById('kt9').innerText = '3 cạnh KHÔNG  thỏa mãn điều kiện của một tam giác ';
+        }
+    }
+
+
+</script>
+</body>
+</html>
